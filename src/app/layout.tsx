@@ -3,10 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const barlow = "https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap";
 
 export const metadata: Metadata = {
-  title: "Lama Dev School Management Dashboard",
-  description: "Next.js School Management System",
+  title: "Towgig App",
+  description: "Towing services ",
 };
 
 export default function RootLayout({
@@ -16,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href={barlow} rel="stylesheet" /> {/* Add Barlow font */}
+      </head>
+      <body className={inter.className}>
+        
+        {children}
+      </body>
     </html>
   );
 }
